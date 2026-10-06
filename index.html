@@ -296,26 +296,6 @@
             padding: 70px 0;
         }
 
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 24px;
-        }
-
-        .project-card {
-            display: flex;
-            flex-direction: column;
-            min-height: 440px;
-            padding: 12px;
-            border: 1px solid #2b2e35;
-            border-radius: 18px;
-            background: #15171b;
-            overflow: hidden;
-            transition:
-                transform 0.25s ease,
-                border-color 0.25s ease;
-        }
-
         .project-card:hover {
             transform: translateY(-6px);
             border-color: #555b66;
@@ -764,92 +744,16 @@
                     programming work.
                 </p>
 
-               <div class="project-grid">
+               <section class="section projects" id="projects">
+    <div class="container">
+        <h2 class="section-title">My Projects</h2>
 
-                    <!-- Completed Games -->
-                    <article class="project-card">
-                        <div class="project-image">
-                            Game Screenshot / Artwork
-                        </div>
-
-                        <div class="project-content">
-                            <h3>Completed Games</h3>
-
-                            <p>
-                                Finished game projects demonstrating game
-                                development, gameplay systems, design, and
-                                programming.
-                            </p>
-
-                            <div class="project-tags">
-                                <span class="tag">Unity</span>
-                                <span class="tag">C#</span>
-                                <span class="tag">Game Design</span>
-                            </div>
-
-                            <a class="project-link" href="#completed-games">
-                                View Completed Games <span>→</span>
-                            </a>
-                        </div>
-                    </article>
-
-                    <!-- Game Jams -->
-                    <article class="project-card">
-                        <div class="project-image">
-                            Game Jam Screenshot / Artwork
-                        </div>
-
-                        <div class="project-content">
-                            <h3>Game Jams</h3>
-
-                            <p>
-                                Small, focused game projects created around
-                                short development schedules, themes, and
-                                collaborative challenges.
-                            </p>
-
-                            <div class="project-tags">
-                                <span class="tag">Game Jams</span>
-                                <span class="tag">Rapid Prototyping</span>
-                                <span class="tag">Teamwork</span>
-                            </div>
-
-                            <a class="project-link" href="#game-jams">
-                                View Game Jams <span>→</span>
-                            </a>
-                        </div>
-                    </article>
-
-                    <!-- Programs -->
-                    <article class="project-card">
-                        <div class="project-image">
-                            Programming Project Screenshot
-                        </div>
-
-                        <div class="project-content">
-                            <h3>Programs</h3>
-
-                            <p>
-                                Programming projects focused on problem-solving,
-                                data structures, algorithms, and software
-                                development.
-                            </p>
-
-                            <div class="project-tags">
-                                <span class="tag">C++</span>
-                                <span class="tag">C#</span>
-                                <span class="tag">Programming</span>
-                            </div>
-
-                            <a class="project-link" href="#programs">
-                                View Programs <span>→</span>
-                            </a>
-                        </div>
-                    </article>
-
-                </div>
-            </div>
-        </section>
+        <p class="section-subtitle">
+            A selection of my completed games, game jam projects, and
+            programming work.
+        </p>
+    </div>
+</section>
 
         <!-- =========================
              PROJECT CATEGORY PLACEHOLDERS
@@ -866,13 +770,78 @@
         </p>
 
         <section class="section projects" id="projects">
+    <section class="section" id="completed-games">
     <div class="container">
-        <h2 class="section-title">My Projects</h2>
+
+        <h2 class="section-title">Completed Games</h2>
 
         <p class="section-subtitle">
-            A selection of my completed games, game jam projects, and
-            programming work.
+            Finished game projects featuring gameplay programming, game
+            systems, design, and development.
         </p>
+
+        <div class="category-grid">
+
+            <article class="category-box">
+
+                <div class="category-image">
+                    <img src="images/echoing-sanctuary.jpg"
+                         alt="Echoing Sanctuary gameplay screenshot">
+                </div>
+
+                <h3>Echoing Sanctuary</h3>
+
+                <p>
+                    Unity / C# 2D action-platformer featuring player
+                    movement, combat, enemy AI, health systems, and
+                    multiple environments.
+                </p>
+
+                <a class="btn btn-secondary" href="#">
+                    View Project
+                </a>
+
+            </article>
+
+            <article class="category-box">
+
+                <div class="category-image">
+                    <img src="images/game-2.jpg"
+                         alt="Second completed game screenshot">
+                </div>
+
+                <h3>Game #2</h3>
+
+                <p>
+                    Add information about your second completed game here.
+                </p>
+
+                <a class="btn btn-secondary" href="#">
+                    View Project
+                </a>
+
+            </article>
+
+            <article class="category-box">
+
+                <div class="category-image">
+                    <img src="images/game-3.jpg"
+                         alt="Third completed game screenshot">
+                </div>
+
+                <h3>Game #3</h3>
+
+                <p>
+                    Add information about your third completed game here.
+                </p>
+
+                <a class="btn btn-secondary" href="#">
+                    View Project
+                </a>
+
+            </article>
+
+        </div>
     </div>
 </section>
 
