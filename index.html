@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,1171 +7,1172 @@
     <meta name="author" content="Jacob Scholes">
     <title>Jacob Scholes | Game Developer & Programmer</title>
 
-<style>
-    /* =========================
-       RESET / BASE
-    ========================== */
-
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    html {
-        scroll-behavior: smooth;
-        scroll-padding-top: 86px;
-    }
-
-    body {
-        font-family: Arial, Helvetica, sans-serif;
-        line-height: 1.6;
-        background: #101114;
-        color: #f2f2f2;
-    }
-
-    a {
-        color: inherit;
-        text-decoration: none;
-    }
-
-    img {
-        max-width: 100%;
-        display: block;
-    }
-
-    button,
-    a {
-        -webkit-tap-highlight-color: transparent;
-    }
-
-    .container {
-        width: min(1120px, 92%);
-        margin: 0 auto;
-    }
-
-    .section {
-        padding: 100px 0;
-    }
-
-    .section-title {
-        margin-bottom: 14px;
-        font-size: clamp(2rem, 4vw, 3rem);
-        line-height: 1.1;
-    }
-
-    .section-subtitle {
-        max-width: 700px;
-        margin: 0 auto 45px;
-        color: #b8bcc6;
-        font-size: 1.05rem;
-        line-height: 1.7;
-    }
-
-    /* =========================
-       HEADER / HERO
-    ========================== */
-
-    .hero {
-        min-height: 68vh;
-        display: flex;
-        align-items: center;
-        text-align: center;
-        padding: 90px 20px 75px;
-        background:
-            radial-gradient(circle at top, rgba(119, 150, 255, 0.18), transparent 42%),
-            #101114;
-    }
-
-    .hero-content {
-        width: min(900px, 100%);
-        margin: 0 auto;
-    }
-
-    .eyebrow {
-        display: inline-block;
-        margin-bottom: 18px;
-        color: #aab8ff;
-        font-size: 0.9rem;
-        font-weight: 700;
-        letter-spacing: 0.18em;
-        text-transform: uppercase;
-    }
-
-    .hero h1 {
-        font-size: clamp(3rem, 8vw, 6rem);
-        line-height: 0.98;
-        letter-spacing: -0.04em;
-        margin-bottom: 18px;
-    }
-
-    .hero h2 {
-        font-size: clamp(1.25rem, 3vw, 2rem);
-        font-weight: 500;
-        color: #cfd3dc;
-        margin-bottom: 24px;
-    }
-
-    .hero-text {
-        max-width: 700px;
-        margin: 0 auto 34px;
-        color: #aeb3be;
-        font-size: 1.1rem;
-    }
-
-    .hero-actions {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 14px;
-    }
-
-    .resume-heading {
-        text-align: center;
-    }
-
-    /* =========================
-       BUTTONS
-    ========================== */
-
-    .btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 48px;
-        padding: 12px 22px;
-        border: 1px solid transparent;
-        border-radius: 999px;
-        font-size: 0.95rem;
-        font-weight: 700;
-        cursor: pointer;
-        transition:
-            transform 0.2s ease,
-            background 0.2s ease,
-            border-color 0.2s ease;
-    }
-
-    .btn:hover {
-        transform: translateY(-2px);
-    }
-
-    .btn-primary {
-        background: #f2f2f2;
-        color: #101114;
-    }
-
-    .btn-primary:hover {
-        background: #ffffff;
-    }
-
-    .btn-secondary {
-        border-color: #444852;
-        color: #f2f2f2;
-        background: transparent;
-    }
-
-    .btn-secondary:hover {
-        border-color: #737985;
-        background: #1a1c21;
-    }
-
-    /* =========================
-       NAVIGATION
-    ========================== */
-
-    .navbar {
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-        border-bottom: 1px solid #2a2d34;
-        background: rgba(16, 17, 20, 0.94);
-        backdrop-filter: blur(10px);
-    }
-
-    .nav-inner {
-        min-height: 72px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 24px;
-    }
-
-    .brand {
-        font-size: 1.1rem;
-        font-weight: 800;
-        letter-spacing: 0.02em;
-        white-space: nowrap;
-    }
-
-    .nav-links {
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-        justify-content: flex-end;
-        gap: 8px;
-        list-style: none;
-    }
-
-    .nav-links a {
-        padding: 9px 12px;
-        color: #c2c6cf;
-        font-size: 0.95rem;
-        border-radius: 8px;
-        transition:
-            color 0.2s ease,
-            background 0.2s ease;
-    }
-
-    .nav-links a:hover,
-    .nav-links a.active {
-        color: #ffffff;
-        background: #1c1f25;
-    }
-
-    /* =========================
-       ABOUT
-    ========================== */
-
-    .about {
-        background: #15171b;
-    }
-
-    .about-grid {
-        display: grid;
-        grid-template-columns: 1.5fr 1fr;
-        gap: 60px;
-        align-items: start;
-    }
-
-    .about-copy {
-        max-width: 850px;
-        margin: 0 auto;
-        text-align: center;
-    }
-
-    .about-copy p {
-        max-width: 800px;
-        margin: 0 auto 22px;
-        color: #c7cad2;
-        font-size: 1.06rem;
-        line-height: 1.8;
-    }
-
-    .about-copy p:last-child {
-        margin-bottom: 0;
-    }
-
-    .quick-info {
-        display: grid;
-        gap: 14px;
-    }
-
-    .info-card {
-        padding: 20px;
-        border: 1px solid #2b2e35;
-        border-radius: 14px;
-        background: #101114;
-    }
-
-    .info-card h3 {
-        margin-bottom: 7px;
-        font-size: 0.82rem;
-        color: #9fa5b1;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-    }
-
-    .info-card p {
-        color: #f2f2f2;
-        font-weight: 600;
-    }
-
-    /* =========================
-       PROJECTS
-    ========================== */
-
-    .projects {
-        background: #101114;
-        text-align: center;
-        padding: 70px 0;
-    }
-
-    .project-grid {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 24px;
-    }
-
-    .project-card {
-        display: flex;
-        flex-direction: column;
-        min-height: 440px;
-        padding: 12px;
-        border: 1px solid #2b2e35;
-        border-radius: 18px;
-        background: #15171b;
-        overflow: hidden;
-        transition:
-            transform 0.25s ease,
-            border-color 0.25s ease;
-    }
-
-    .project-card:hover {
-        transform: translateY(-6px);
-        border-color: #555b66;
-    }
-
-    .project-image {
-        min-height: 220px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 20px;
-        border-radius: 12px;
-        background:
-            linear-gradient(135deg, #252832, #181a1f);
-        color: #8f95a1;
-        text-align: center;
-        font-size: 0.85rem;
-        font-weight: 700;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-    }
-
-    .project-content {
-        display: flex;
-        flex-direction: column;
-        flex: 1;
-        padding: 22px 14px 12px;
-    }
-
-    .project-content h3 {
-        margin-bottom: 9px;
-        font-size: 1.35rem;
-    }
-
-    .project-content p {
-        margin-bottom: 18px;
-        color: #adb2bd;
-    }
-
-    .project-tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-        margin-bottom: 22px;
-    }
-
-    .tag {
-        padding: 6px 9px;
-        border: 1px solid #353942;
-        border-radius: 999px;
-        color: #c4c8d0;
-        font-size: 0.78rem;
-    }
-
-    .project-link {
-        margin-top: auto;
-        color: #ffffff;
-        font-weight: 700;
-    }
-
-    .project-link span {
-        display: inline-block;
-        margin-left: 4px;
-        transition: transform 0.2s ease;
-    }
-
-    .project-link:hover span {
-        transform: translateX(4px);
-    }
-
-    /* Project category pages use the same boxed visual language as My Projects */
-    .category-grid {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 24px;
-    }
-
-    .category-box {
-        padding: 24px;
-        border: 1px solid #2b2e35;
-        border-radius: 18px;
-        background: #15171b;
-        min-height: 240px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .category-box h3 {
-        margin-bottom: 10px;
-        font-size: 1.3rem;
-    }
-
-    .category-box p {
-        color: #adb2bd;
-        margin-bottom: 20px;
-    }
-
-    .category-box .btn {
-        margin-top: auto;
-        align-self: center;
-    }
-
-    .category-image {
-        width: 100%;
-        height: 200px;
-        margin-bottom: 20px;
-        border-radius: 12px;
-        overflow: hidden;
-        background: #252832;
-    }
-
-    .category-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    /* =========================
-       RESUME
-    ========================== */
-
-    .resume {
-        background: #15171b;
-    }
-
-    .resume-layout {
-        display: grid;
-        grid-template-columns: 220px 1fr;
-        gap: 42px;
-        align-items: start;
-    }
-
-    .resume-nav {
-        position: sticky;
-        top: 100px;
-        align-self: start;
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-        padding: 12px;
-        border: 1px solid #2b2e35;
-        border-radius: 14px;
-        background: #101114;
-        height: fit-content;
-    }
-
-    .resume-nav a {
-        padding: 9px 10px;
-        border-radius: 8px;
-        color: #aeb3be;
-    }
-
-    .resume-nav a:hover {
-        color: #ffffff;
-        background: #1b1e24;
-    }
-
-    .resume-content {
-        display: grid;
-        gap: 30px;
-    }
-
-    .resume-block {
-        padding-bottom: 28px;
-        border-bottom: 1px solid #2b2e35;
-    }
-
-    .resume-block:last-child {
-        padding-bottom: 0;
-        border-bottom: 0;
-    }
-
-    .resume-block h3 {
-        margin-bottom: 10px;
-        font-size: 1.35rem;
-    }
-
-    .resume-meta {
-        margin-bottom: 4px;
-        color: #aab8ff;
-        font-weight: 700;
-    }
-
-    .resume-date {
-        margin-bottom: 12px;
-        color: #9197a3;
-        font-size: 0.92rem;
-    }
-
-    .resume-block p {
-        color: #c2c6cf;
-    }
-
-    .resume-block ul {
-        padding-left: 20px;
-        color: #c2c6cf;
-    }
-
-    .resume-actions {
-        margin-top: 20px;
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 12px;
-    }
-
-    /* =========================
-       CONTACT
-    ========================== */
-
-    .contact {
-        background: #101114;
-        text-align: center;
-    }
-
-    .contact-inner {
-        width: min(800px, 100%);
-        margin: 0 auto;
-    }
-
-    .contact-copy {
-        margin-bottom: 32px;
-        color: #aeb3be;
-        font-size: 1.05rem;
-    }
-
-    .contact-links {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 12px;
-    }
-
-    .contact-link {
-        min-width: 125px;
-        padding: 14px 18px;
-        border: 1px solid #343841;
-        border-radius: 12px;
-        background: #15171b;
-        color: #f2f2f2;
-        font-weight: 700;
-        transition:
-            transform 0.2s ease,
-            border-color 0.2s ease,
-            background 0.2s ease;
-    }
-
-    .contact-link:hover {
-        transform: translateY(-3px);
-        border-color: #646a75;
-        background: #1a1d22;
-    }
-
-    /* =========================
-       FOOTER
-    ========================== */
-
-    footer {
-        padding: 28px 0;
-        border-top: 1px solid #2a2d34;
-        background: #0c0d0f;
-        color: #818793;
-        text-align: center;
-        font-size: 0.9rem;
-    }
-
-    /* =========================
-       RESPONSIVE DESIGN
-    ========================== */
-
-    @media (max-width: 900px) {
-        .project-grid,
-        .category-grid {
-            grid-template-columns: 1fr;
+    <style>
+        /* =========================
+           RESET / BASE
+        ========================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        .project-card {
-            min-height: auto;
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 86px;
         }
 
-        .project-image {
-            min-height: 260px;
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            background: #101114;
+            color: #f2f2f2;
         }
 
-        .resume-layout {
-            grid-template-columns: 1fr;
+        a {
+            color: inherit;
+            text-decoration: none;
         }
 
-        .resume-nav {
-            position: static;
-            height: auto;
-        }
-    }
-
-    @media (max-width: 700px) {
-        .hero {
-            min-height: 62vh;
-            padding-top: 70px;
+        img {
+            max-width: 100%;
+            display: block;
         }
 
-        .nav-inner {
-            min-height: 64px;
-            align-items: flex-start;
-            padding: 14px 0;
-            flex-direction: column;
-            gap: 10px;
+        button,
+        a {
+            -webkit-tap-highlight-color: transparent;
         }
 
-        .nav-links {
-            width: 100%;
-            justify-content: flex-start;
-            overflow-x: auto;
-            flex-wrap: nowrap;
-            padding-bottom: 2px;
-        }
-
-        .nav-links a {
-            white-space: nowrap;
+        .container {
+            width: min(1120px, 92%);
+            margin: 0 auto;
         }
 
         .section {
-            padding: 75px 0;
+            padding: 100px 0;
+        }
+
+        .section-title {
+            margin-bottom: 14px;
+            font-size: clamp(2rem, 4vw, 3rem);
+            line-height: 1.1;
+        }
+
+        .section-subtitle {
+            max-width: 700px;
+            margin: 0 auto 45px;
+            color: #b8bcc6;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        /* =========================
+           HEADER / HERO
+        ========================== */
+
+        .hero {
+            min-height: 68vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            padding: 90px 20px 75px;
+            background:
+                radial-gradient(circle at top, rgba(119, 150, 255, 0.18), transparent 42%),
+                #101114;
+        }
+
+        .hero-content {
+            width: min(900px, 100%);
+            margin: 0 auto;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            margin-bottom: 18px;
+            color: #aab8ff;
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 6rem);
+            line-height: 0.98;
+            letter-spacing: -0.04em;
+            margin-bottom: 18px;
+        }
+
+        .hero h2 {
+            font-size: clamp(1.25rem, 3vw, 2rem);
+            font-weight: 500;
+            color: #cfd3dc;
+            margin-bottom: 24px;
+        }
+
+        .hero-text {
+            max-width: 700px;
+            margin: 0 auto 34px;
+            color: #aeb3be;
+            font-size: 1.1rem;
+        }
+
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .resume-heading {
+            text-align: center;
+        }
+
+        /* =========================
+           BUTTONS
+        ========================== */
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 48px;
+            padding: 12px 22px;
+            border: 1px solid transparent;
+            border-radius: 999px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition:
+                transform 0.2s ease,
+                background 0.2s ease,
+                border-color 0.2s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background: #f2f2f2;
+            color: #101114;
+        }
+
+        .btn-primary:hover {
+            background: #ffffff;
+        }
+
+        .btn-secondary {
+            border-color: #444852;
+            color: #f2f2f2;
+            background: transparent;
+        }
+
+        .btn-secondary:hover {
+            border-color: #737985;
+            background: #1a1c21;
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================== */
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #2a2d34;
+            background: rgba(16, 17, 20, 0.94);
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-inner {
+            min-height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .brand {
+            font-size: 1.1rem;
+            font-weight: 800;
+            letter-spacing: 0.02em;
+            white-space: nowrap;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            gap: 8px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            padding: 9px 12px;
+            color: #c2c6cf;
+            font-size: 0.95rem;
+            border-radius: 8px;
+            transition:
+                color 0.2s ease,
+                background 0.2s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #ffffff;
+            background: #1c1f25;
+        }
+
+        /* =========================
+           ABOUT
+        ========================== */
+
+        .about {
+            background: #15171b;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .about-copy {
+            max-width: 850px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-copy p {
+            max-width: 800px;
+            margin: 0 auto 22px;
+            color: #c7cad2;
+            font-size: 1.06rem;
+            line-height: 1.8;
+        }
+
+        .about-copy p:last-child {
+            margin-bottom: 0;
+        }
+
+        .quick-info {
+            display: grid;
+            gap: 14px;
+        }
+
+        .info-card {
+            padding: 20px;
+            border: 1px solid #2b2e35;
+            border-radius: 14px;
+            background: #101114;
+        }
+
+        .info-card h3 {
+            margin-bottom: 7px;
+            font-size: 0.82rem;
+            color: #9fa5b1;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .info-card p {
+            color: #f2f2f2;
+            font-weight: 600;
+        }
+
+        /* =========================
+           PROJECTS
+        ========================== */
+
+        .projects {
+            background: #101114;
+            text-align: center;
+            padding: 70px 0;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 24px;
+        }
+
+        .project-card {
+            display: flex;
+            flex-direction: column;
+            min-height: 440px;
+            padding: 12px;
+            border: 1px solid #2b2e35;
+            border-radius: 18px;
+            background: #15171b;
+            overflow: hidden;
+            transition:
+                transform 0.25s ease,
+                border-color 0.25s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            border-color: #555b66;
         }
 
         .project-image {
-            min-height: 210px;
+            min-height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            border-radius: 12px;
+            background:
+                linear-gradient(135deg, #252832, #181a1f);
+            color: #8f95a1;
+            text-align: center;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .project-content {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            padding: 22px 14px 12px;
+        }
+
+        .project-content h3 {
+            margin-bottom: 9px;
+            font-size: 1.35rem;
+        }
+
+        .project-content p {
+            margin-bottom: 18px;
+            color: #adb2bd;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 22px;
+        }
+
+        .tag {
+            padding: 6px 9px;
+            border: 1px solid #353942;
+            border-radius: 999px;
+            color: #c4c8d0;
+            font-size: 0.78rem;
+        }
+
+        .project-link {
+            margin-top: auto;
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        .project-link span {
+            display: inline-block;
+            margin-left: 4px;
+            transition: transform 0.2s ease;
+        }
+
+        .project-link:hover span {
+            transform: translateX(4px);
+        }
+
+        /* Project category pages use the same boxed visual language as My Projects */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 24px;
+        }
+
+        .category-box {
+            padding: 24px;
+            border: 1px solid #2b2e35;
+            border-radius: 18px;
+            background: #15171b;
+            min-height: 240px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .category-box h3 {
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .category-box p {
+            color: #adb2bd;
+            margin-bottom: 20px;
+        }
+
+        .category-box .btn {
+            margin-top: auto;
+            align-self: center;
+        }
+
+        .category-image {
+            width: 100%;
+            height: 200px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #252832;
+        }
+
+        .category-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* =========================
+           RESUME
+        ========================== */
+
+        .resume {
+            background: #15171b;
+        }
+
+        .resume-layout {
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            gap: 42px;
+            align-items: start;
+        }
+
+        .resume-nav {
+            position: sticky;
+            top: 100px;
+            align-self: start;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            padding: 12px;
+            border: 1px solid #2b2e35;
+            border-radius: 14px;
+            background: #101114;
+            height: fit-content;
+        }
+
+        .resume-nav a {
+            padding: 9px 10px;
+            border-radius: 8px;
+            color: #aeb3be;
+        }
+
+        .resume-nav a:hover {
+            color: #ffffff;
+            background: #1b1e24;
+        }
+
+        .resume-content {
+            display: grid;
+            gap: 30px;
+        }
+
+        .resume-block {
+            padding-bottom: 28px;
+            border-bottom: 1px solid #2b2e35;
+        }
+
+        .resume-block:last-child {
+            padding-bottom: 0;
+            border-bottom: 0;
+        }
+
+        .resume-block h3 {
+            margin-bottom: 10px;
+            font-size: 1.35rem;
+        }
+
+        .resume-meta {
+            margin-bottom: 4px;
+            color: #aab8ff;
+            font-weight: 700;
+        }
+
+        .resume-date {
+            margin-bottom: 12px;
+            color: #9197a3;
+            font-size: 0.92rem;
+        }
+
+        .resume-block p {
+            color: #c2c6cf;
+        }
+
+        .resume-block ul {
+            padding-left: 20px;
+            color: #c2c6cf;
+        }
+
+        .resume-actions {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        /* =========================
+           CONTACT
+        ========================== */
+
+        .contact {
+            background: #101114;
+            text-align: center;
+        }
+
+        .contact-inner {
+            width: min(800px, 100%);
+            margin: 0 auto;
+        }
+
+        .contact-copy {
+            margin-bottom: 32px;
+            color: #aeb3be;
+            font-size: 1.05rem;
         }
 
         .contact-links {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
         }
 
         .contact-link {
-            min-width: 0;
-        }
-    }
-
-    @media (max-width: 450px) {
-        .hero-actions,
-        .resume-actions {
-            display: grid;
-        }
-
-        .btn {
-            width: 100%;
-        }
-
-        .contact-links {
-            grid-template-columns: 1fr;
-        }
-    }
-
-    /* =========================
-       REDUCED MOTION
-    ========================== */
-
-    @media (prefers-reduced-motion: reduce) {
-        html {
-            scroll-behavior: auto;
+            min-width: 125px;
+            padding: 14px 18px;
+            border: 1px solid #343841;
+            border-radius: 12px;
+            background: #15171b;
+            color: #f2f2f2;
+            font-weight: 700;
+            transition:
+                transform 0.2s ease,
+                border-color 0.2s ease,
+                background 0.2s ease;
         }
 
-        *,
-        *::before,
-        *::after {
-            transition: none !important;
+        .contact-link:hover {
+            transform: translateY(-3px);
+            border-color: #646a75;
+            background: #1a1d22;
         }
-    }
-</style>
 
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            padding: 28px 0;
+            border-top: 1px solid #2a2d34;
+            background: #0c0d0f;
+            color: #818793;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* =========================
+           RESPONSIVE DESIGN
+        ========================== */
+
+        @media (max-width: 900px) {
+            .project-grid,
+            .category-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-card {
+                min-height: auto;
+            }
+
+            .project-image {
+                min-height: 260px;
+            }
+
+            .resume-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .resume-nav {
+                position: static;
+                height: auto;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .hero {
+                min-height: 62vh;
+                padding-top: 70px;
+            }
+
+            .nav-inner {
+                min-height: 64px;
+                align-items: flex-start;
+                padding: 14px 0;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .nav-links {
+                width: 100%;
+                justify-content: flex-start;
+                overflow-x: auto;
+                flex-wrap: nowrap;
+                padding-bottom: 2px;
+            }
+
+            .nav-links a {
+                white-space: nowrap;
+            }
+
+            .section {
+                padding: 75px 0;
+            }
+
+            .project-image {
+                min-height: 210px;
+            }
+
+            .contact-links {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .contact-link {
+                min-width: 0;
+            }
+        }
+
+        @media (max-width: 450px) {
+            .hero-actions,
+            .resume-actions {
+                display: grid;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .contact-links {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* =========================
+           REDUCED MOTION
+        ========================== */
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                transition: none !important;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- =========================
-     HERO / HEADER
-========================== -->
-<header class="hero" id="home">
-    <div class="hero-content">
-        <div class="container">
-            <p class="eyebrow">Portfolio</p>
-            <h1>Jacob Scholes</h1>
-            <h2>Game Developer &amp; Programmer</h2>
-        </div>
-    </div>
-</header>
-
-<!-- =========================
-     NAVIGATION
-========================== -->
-<nav class="navbar" aria-label="Main navigation">
-    <div class="container nav-inner">
-        <a class="brand" href="#home">Jacob Scholes</a>
-
-        <ul class="nav-links">
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#projects">My Projects</a></li>
-            <li><a href="#resume">Resume</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </div>
-</nav>
-
-<main>
-
     <!-- =========================
-         ABOUT ME
+         HERO / HEADER
     ========================== -->
-    <section class="section about" id="about">
-        <div class="container">
-            <div class="about-copy">
-                <h2 class="section-title">About Me</h2>
-                <p class="section-subtitle">
-                    A little about who I am, what I create, and what I want
-                    to accomplish through game development.
-                </p>
-
-                <p>
-                    I'm a game developer and programmer passionate about
-                    creating games and interactive experiences.
-                </p>
-
-                <p>
-                    Through coursework, personal projects, and game jams,
-                    I've developed experience in programming, game design,
-                    problem-solving, and gameplay development.
-                </p>
-
-                <p>
-                    My long-term goal is to build a career in game
-                    development and programming.
-                </p>
+    <header class="hero" id="home">
+        <div class="hero-content">
+            <div class="container">
+                <p class="eyebrow">Portfolio</p>
+                <h1>Jacob Scholes</h1>
+                <h2>Game Developer &amp; Programmer</h2>
             </div>
         </div>
-    </section>
+    </header>
 
     <!-- =========================
-         PROJECTS
+         NAVIGATION
     ========================== -->
-    <section class="section projects" id="projects">
-        <div class="container">
-            <h2 class="section-title">My Projects</h2>
-            <p class="section-subtitle">
-                A selection of my completed games, game jam projects, and
-                programming work.
-            </p>
+    <nav class="navbar" aria-label="Main navigation">
+        <div class="container nav-inner">
+            <a class="brand" href="#home">Jacob Scholes</a>
 
-           <div class="project-grid">
-
-                <!-- Completed Games -->
-                <article class="project-card">
-                    <div class="project-image">
-                        Game Screenshot / Artwork
-                    </div>
-
-                    <div class="project-content">
-                        <h3>Completed Games</h3>
-
-                        <p>
-                            Finished game projects demonstrating game
-                            development, gameplay systems, design, and
-                            programming.
-                        </p>
-
-                        <div class="project-tags">
-                            <span class="tag">Unity</span>
-                            <span class="tag">C#</span>
-                            <span class="tag">Game Design</span>
-                        </div>
-
-                        <a class="project-link" href="#completed-games">
-                            View Completed Games <span>→</span>
-                        </a>
-                    </div>
-                </article>
-
-                <!-- Game Jams -->
-                <article class="project-card">
-                    <div class="project-image">
-                        Game Jam Screenshot / Artwork
-                    </div>
-
-                    <div class="project-content">
-                        <h3>Game Jams</h3>
-
-                        <p>
-                            Small, focused game projects created around
-                            short development schedules, themes, and
-                            collaborative challenges.
-                        </p>
-
-                        <div class="project-tags">
-                            <span class="tag">Game Jams</span>
-                            <span class="tag">Rapid Prototyping</span>
-                            <span class="tag">Teamwork</span>
-                        </div>
-
-                        <a class="project-link" href="#game-jams">
-                            View Game Jams <span>→</span>
-                        </a>
-                    </div>
-                </article>
-
-                <!-- Programs -->
-                <article class="project-card">
-                    <div class="project-image">
-                        Programming Project Screenshot
-                    </div>
-
-                    <div class="project-content">
-                        <h3>Programs</h3>
-
-                        <p>
-                            Programming projects focused on problem-solving,
-                            data structures, algorithms, and software
-                            development.
-                        </p>
-
-                        <div class="project-tags">
-                            <span class="tag">C++</span>
-                            <span class="tag">C#</span>
-                            <span class="tag">Programming</span>
-                        </div>
-
-                        <a class="project-link" href="#programs">
-                            View Programs <span>→</span>
-                        </a>
-                    </div>
-                </article>
-
-            </div>
+            <ul class="nav-links">
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#projects">My Projects</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </div>
-    </section>
+    </nav>
 
-    <!-- =========================
-         PROJECT CATEGORY PLACEHOLDERS
-         These can be converted into
-         individual project pages later.
-    ========================== -->
-    <section class="section" id="completed-games">
-<div class="container">
-    <h2 class="section-title">Completed Games</h2>
+    <main>
 
-    <p class="section-subtitle">
-        Finished game projects featuring gameplay programming, game
-        systems, design, and development.
-    </p>
+        <!-- =========================
+             ABOUT ME
+        ========================== -->
+        <section class="section about" id="about">
+            <div class="container">
+                <div class="about-copy">
+                    <h2 class="section-title">About Me</h2>
+                    <p class="section-subtitle">
+                        A little about who I am, what I create, and what I want
+                        to accomplish through game development.
+                    </p>
 
-    <section class="section projects" id="projects">
-<div class="container">
-    <h2 class="section-title">My Projects</h2>
+                    <p>
+                        I'm a game developer and programmer passionate about
+                        creating games and interactive experiences.
+                    </p>
 
-    <p class="section-subtitle">
-        A selection of my completed games, game jam projects, and
-        programming work.
-    </p>
-</div>
+                    <p>
+                        Through coursework, personal projects, and game jams,
+                        I've developed experience in programming, game design,
+                        problem-solving, and gameplay development.
+                    </p>
 
-</section>
-
-    <section class="section about" id="game-jams">
-        <div class="container">
-            <h2 class="section-title">Game Jams</h2>
-            <p class="section-subtitle">
-                Short-form game projects created around themes, limited
-                development time, and creative or collaborative challenges.
-            </p>
-
-            <div class="category-grid">
-                <article class="category-box">
-
-                <div class="category-image">
-                    <img src="images/game-jam-1.jpg"
-                         alt="Game jam project screenshot">
+                    <p>
+                        My long-term goal is to build a career in game
+                        development and programming.
+                    </p>
                 </div>
-
-            <h3>Game Jam Project</h3>
-
-            <p>
-                Add the game's title, your role, the jam theme,
-                technologies used, and a short description here.
-            </p>
-
-            <a class="btn btn-secondary" href="#">
-                View Project
-            </a>
-
-        </article>
-
-                <article class="category-box">
-
-                <div class="category-image">
-                <img src="images/game-jam-2.jpg"
-                     alt="Second game jam project screenshot">
             </div>
+        </section>
 
-            <h3>Game Jam Project</h3>
+        <!-- =========================
+             PROJECTS
+        ========================== -->
+        <section class="section projects" id="projects">
+            <div class="container">
+                <h2 class="section-title">My Projects</h2>
+                <p class="section-subtitle">
+                    A selection of my completed games, game jam projects, and
+                    programming work.
+                </p>
 
-            <p>
-                Add another game jam entry with a screenshot,
-                development story, and playable link.
-            </p>
+               <div class="project-grid">
 
-            <a class="btn btn-secondary" href="#">
-                View Project
-            </a>
+                    <!-- Completed Games -->
+                    <article class="project-card">
+                        <div class="project-image">
+                            Game Screenshot / Artwork
+                        </div>
 
-        </article>
+                        <div class="project-content">
+                            <h3>Completed Games</h3>
 
-                <article class="category-box">
+                            <p>
+                                Finished game projects demonstrating game
+                                development, gameplay systems, design, and
+                                programming.
+                            </p>
 
-            <div class="category-image">
-                <img src="images/game-jam-3.jpg"
-                     alt="Third game jam project screenshot">
-            </div>
+                            <div class="project-tags">
+                                <span class="tag">Unity</span>
+                                <span class="tag">C#</span>
+                                <span class="tag">Game Design</span>
+                            </div>
 
-            <h3>Game Jam Project</h3>
-
-            <p>
-                Add another game jam entry when you have one ready
-                to showcase.
-            </p>
-
-            <a class="btn btn-secondary" href="#">
-                View Project
-            </a>
-
-        </article>
-            </div>
-        </div>
-    </section>
-
-    <section class="section" id="programs">
-        <div class="container">
-            <h2 class="section-title">Programs</h2>
-            <p class="section-subtitle">
-                Programming projects that demonstrate your technical skills
-                outside of your completed games.
-            </p>
-
-            <div class="category-grid">
-                <article class="category-box">
-                    <h3>Program #1</h3>
-                    <p>
-                        Add C++ coursework or personal projects involving
-                        pointers, arrays, functions, algorithms, or other
-                        programming concepts.
-                    </p>
-                    <a class="btn btn-secondary" href="#">View Project</a>
-                </article>
-
-                <article class="category-box">
-                    <h3>Program #2</h3>
-                    <p>
-                        Add standalone C# programs, tools, gameplay systems,
-                        or other software projects.
-                    </p>
-                    <a class="btn btn-secondary" href="#">View Project</a>
-                </article>
-
-                <article class="category-box">
-                    <h3>Program #3</h3>
-                    <p>
-                        Add other programming or software projects that show
-                        your technical range and problem-solving skills.
-                    </p>
-                    <a class="btn btn-secondary" href="#">View Project</a>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- =========================
-         RESUME
-    ========================== -->
-    <section class="section resume" id="resume">
-<div class="container">
-
-    <div class="resume-heading">
-        <h2 class="section-title">Resume</h2>
-    </div>
-
-    <div class="resume-layout">
-
-                <aside class="resume-nav" aria-label="Resume sections">
-                    <a href="#resume-about">About</a>
-                    <a href="#resume-education">Education</a>
-                    <a href="#resume-experience">Experience</a>
-                    <a href="#resume-skills">Skills</a>
-                    <a href="#resume-activities">Activities</a>
-                </aside>
-
-                <div class="resume-content">
-
-                    <article class="resume-block" id="resume-about">
-                        <h3>Jacob Scholes</h3>
-                        <p>
-                            Dedicated college student with a strong work ethic and hands-on experience in a fabrication workhouse environment, with a passion for coding and video game development.
-                        </p>
+                            <a class="project-link" href="#completed-games">
+                                View Completed Games <span>→</span>
+                            </a>
+                        </div>
                     </article>
 
-                    <article class="resume-block" id="resume-education">
-                        <h3>Education</h3>
-                        
-                        <p class="resume-meta">
-                            University of Wisconsin–Whitewater
-                        </p>
-                        <ul>
-                            <li>Bachlor of Arts in Media Arts and Game Development with an emphasis in Technology while also minoring in Computer Science.</li> 
-                            <li>Recieved the Dean's list award for maintaining a high grade point average and academic excellence during the Fall 2025 and Spring 2026 semesters.</li>
-                        </ul>
-                        <br>
-                        <p class="resume-meta">
-                            Joliet Junior College
-                        </p>
-                        <ul>
-                            <li>Graduated with an Associate of Arts degree with an emphasis in Game Development.</li>
-                            <li>Recongnized as a Collegiate Scholar Athlete by the NCBCA (National Collegiate Bowling Coaches Association).</li>
-                        </ul>
+                    <!-- Game Jams -->
+                    <article class="project-card">
+                        <div class="project-image">
+                            Game Jam Screenshot / Artwork
+                        </div>
+
+                        <div class="project-content">
+                            <h3>Game Jams</h3>
+
+                            <p>
+                                Small, focused game projects created around
+                                short development schedules, themes, and
+                                collaborative challenges.
+                            </p>
+
+                            <div class="project-tags">
+                                <span class="tag">Game Jams</span>
+                                <span class="tag">Rapid Prototyping</span>
+                                <span class="tag">Teamwork</span>
+                            </div>
+
+                            <a class="project-link" href="#game-jams">
+                                View Game Jams <span>→</span>
+                            </a>
+                        </div>
                     </article>
 
-                    <article class="resume-block" id="resume-experience">
-                        <h3>Experience</h3>
+                    <!-- Programs -->
+                    <article class="project-card">
+                        <div class="project-image">
+                            Programming Project Screenshot
+                        </div>
 
-                        <p class="resume-meta">
-                            Worldwide Golf — Picker/Packer Warehouse Associate
-                        </p>
-                        <p class="resume-date">
-                            Seasonal • June 2025–Present
-                        </p>
-                        <ul>
-                            <li>Aided in picking and packing to support shipping activity; handled dock recieving; organized materials; and logged UPC recieving.</li>
-                        </ul>
+                        <div class="project-content">
+                            <h3>Programs</h3>
 
-                        <br>
+                            <p>
+                                Programming projects focused on problem-solving,
+                                data structures, algorithms, and software
+                                development.
+                            </p>
 
-                        <p class="resume-meta">
-                            Glass Solutions Inc. — Shop Assistant
-                        </p>
-                        <p class="resume-date">
-                            Seasonal • June 2021–December 2023
-                        </p>
-                        <ul>
-                            <li>Swept shop floor; emptied garbage cans; assisted other workers; organized inventory and equipment; operated magnetic sweeper; exercised loading and unloading trucks; and completed deliveries.</li>
-                        </ul>
-                    </article>
+                            <div class="project-tags">
+                                <span class="tag">C++</span>
+                                <span class="tag">C#</span>
+                                <span class="tag">Programming</span>
+                            </div>
 
-                    <article class="resume-block" id="resume-skills">
-                        <h3>Skills</h3>
-                        <ul>
-                            <li>Software and Engines: Visual Studio, Unity, Unreal Engine, Game Maker, Maya</li>
-                            <li>Languages: C++, C#, HTML, SQL</li>
-                            <li>Personal: Work efficiently and colaboratively in a fast-paced setting, organizational skills, attention to detail, commitment to delivering high-quality results</li>
-                        </ul>
-                    </article>
-
-                    <article class="resume-block" id="resume-activities">
-                        <h3>Activities</h3>
-                        <p class="resume-meta">
-                            Whitewater GAMED — Secretary
-                        </p>
-                        <ul>
-                           <li>Participate in meetings, game jams, and other
-                            activities that support communication,
-                            organization, collaboration, and connection
-                            with other game development students.</li> 
-                        </ul>
-                        <br>
-                        <p class="resume-meta">
-                            Men's Bowling Team - Joliet Juinior College
-                        </p>
-                        <ul>
-                            <li>Competed in tornaments: Understanding the importance of accountability, communication, focus, and supporting teammates toward a common goal. </li>
-                        </ul>
-                    </article>
-
-                    <!--<article class="resume-block" id="resume-other">
-                        <h3>Other</h3>
-                        <p>
-                            More portfolio information, awards,
-                            certifications, or additional experience can be
-                            added here as your professional background grows.
-                        </p> -->
-
-                        <div class="resume-actions">
-                            <!-- Replace the href with your uploaded PDF file -->
-                            <a class="btn btn-primary" href="New Resume.pdf" target="_blank" rel="noopener">
-                                View Full Resume
+                            <a class="project-link" href="#programs">
+                                View Programs <span>→</span>
                             </a>
                         </div>
                     </article>
 
                 </div>
             </div>
+        </section>
+
+        <!-- =========================
+             PROJECT CATEGORY PLACEHOLDERS
+             These can be converted into
+             individual project pages later.
+        ========================== -->
+        <section class="section" id="completed-games">
+    <div class="container">
+        <h2 class="section-title">Completed Games</h2>
+
+        <p class="section-subtitle">
+            Finished game projects featuring gameplay programming, game
+            systems, design, and development.
+        </p>
+
+        <section class="section projects" id="projects">
+    <div class="container">
+        <h2 class="section-title">My Projects</h2>
+
+        <p class="section-subtitle">
+            A selection of my completed games, game jam projects, and
+            programming work.
+        </p>
+    </div>
+</section>
+
+        <section class="section about" id="game-jams">
+            <div class="container">
+                <h2 class="section-title">Game Jams</h2>
+                <p class="section-subtitle">
+                    Short-form game projects created around themes, limited
+                    development time, and creative or collaborative challenges.
+                </p>
+
+                <div class="category-grid">
+                    <article class="category-box">
+
+                    <div class="category-image">
+                        <img src="images/game-jam-1.jpg"
+                             alt="Game jam project screenshot">
+                    </div>
+
+                <h3>Game Jam Project</h3>
+
+                <p>
+                    Add the game's title, your role, the jam theme,
+                    technologies used, and a short description here.
+                </p>
+
+                <a class="btn btn-secondary" href="#">
+                    View Project
+                </a>
+
+            </article>
+
+                    <article class="category-box">
+
+                    <div class="category-image">
+                    <img src="images/game-jam-2.jpg"
+                         alt="Second game jam project screenshot">
+                </div>
+
+                <h3>Game Jam Project</h3>
+
+                <p>
+                    Add another game jam entry with a screenshot,
+                    development story, and playable link.
+                </p>
+
+                <a class="btn btn-secondary" href="#">
+                    View Project
+                </a>
+
+            </article>
+
+                    <article class="category-box">
+
+                <div class="category-image">
+                    <img src="images/game-jam-3.jpg"
+                         alt="Third game jam project screenshot">
+                </div>
+
+                <h3>Game Jam Project</h3>
+
+                <p>
+                    Add another game jam entry when you have one ready
+                    to showcase.
+                </p>
+
+                <a class="btn btn-secondary" href="#">
+                    View Project
+                </a>
+
+            </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="programs">
+            <div class="container">
+                <h2 class="section-title">Programs</h2>
+                <p class="section-subtitle">
+                    Programming projects that demonstrate your technical skills
+                    outside of your completed games.
+                </p>
+
+                <div class="category-grid">
+                    <article class="category-box">
+                        <h3>Program #1</h3>
+                        <p>
+                            Add C++ coursework or personal projects involving
+                            pointers, arrays, functions, algorithms, or other
+                            programming concepts.
+                        </p>
+                        <a class="btn btn-secondary" href="#">View Project</a>
+                    </article>
+
+                    <article class="category-box">
+                        <h3>Program #2</h3>
+                        <p>
+                            Add standalone C# programs, tools, gameplay systems,
+                            or other software projects.
+                        </p>
+                        <a class="btn btn-secondary" href="#">View Project</a>
+                    </article>
+
+                    <article class="category-box">
+                        <h3>Program #3</h3>
+                        <p>
+                            Add other programming or software projects that show
+                            your technical range and problem-solving skills.
+                        </p>
+                        <a class="btn btn-secondary" href="#">View Project</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================
+             RESUME
+        ========================== -->
+        <section class="section resume" id="resume">
+    <div class="container">
+
+        <div class="resume-heading">
+            <h2 class="section-title">Resume</h2>
         </div>
-    </section>
+
+        <div class="resume-layout">
+
+                    <aside class="resume-nav" aria-label="Resume sections">
+                        <a href="#resume-about">About</a>
+                        <a href="#resume-education">Education</a>
+                        <a href="#resume-experience">Experience</a>
+                        <a href="#resume-skills">Skills</a>
+                        <a href="#resume-activities">Activities</a>
+                    </aside>
+
+                    <div class="resume-content">
+
+                        <article class="resume-block" id="resume-about">
+                            <h3>Jacob Scholes</h3>
+                            <p>
+                                Dedicated college student with a strong work ethic and hands-on experience in a fabrication workhouse environment, with a passion for coding and video game development.
+                            </p>
+                        </article>
+
+                        <article class="resume-block" id="resume-education">
+                            <h3>Education</h3>
+                            
+                            <p class="resume-meta">
+                                University of Wisconsin–Whitewater
+                            </p>
+                            <ul>
+                                <li>Bachlor of Arts in Media Arts and Game Development with an emphasis in Technology while also minoring in Computer Science.</li> 
+                                <li>Recieved the Dean's list award for maintaining a high grade point average and academic excellence during the Fall 2025 and Spring 2026 semesters.</li>
+                            </ul>
+                            <br>
+                            <p class="resume-meta">
+                                Joliet Junior College
+                            </p>
+                            <ul>
+                                <li>Graduated with an Associate of Arts degree with an emphasis in Game Development.</li>
+                                <li>Recongnized as a Collegiate Scholar Athlete by the NCBCA (National Collegiate Bowling Coaches Association).</li>
+                            </ul>
+                        </article>
+
+                        <article class="resume-block" id="resume-experience">
+                            <h3>Experience</h3>
+
+                            <p class="resume-meta">
+                                Worldwide Golf — Picker/Packer Warehouse Associate
+                            </p>
+                            <p class="resume-date">
+                                Seasonal • June 2025–Present
+                            </p>
+                            <ul>
+                                <li>Aided in picking and packing to support shipping activity; handled dock recieving; organized materials; and logged UPC recieving.</li>
+                            </ul>
+
+                            <br>
+
+                            <p class="resume-meta">
+                                Glass Solutions Inc. — Shop Assistant
+                            </p>
+                            <p class="resume-date">
+                                Seasonal • June 2021–December 2023
+                            </p>
+                            <ul>
+                                <li>Swept shop floor; emptied garbage cans; assisted other workers; organized inventory and equipment; operated magnetic sweeper; exercised loading and unloading trucks; and completed deliveries.</li>
+                            </ul>
+                        </article>
+
+                        <article class="resume-block" id="resume-skills">
+                            <h3>Skills</h3>
+                            <ul>
+                                <li>Software and Engines: Visual Studio, Unity, Unreal Engine, Game Maker, Maya</li>
+                                <li>Languages: C++, C#, HTML, SQL</li>
+                                <li>Personal: Work efficiently and colaboratively in a fast-paced setting, organizational skills, attention to detail, commitment to delivering high-quality results</li>
+                            </ul>
+                        </article>
+
+                        <article class="resume-block" id="resume-activities">
+                            <h3>Activities</h3>
+                            <p class="resume-meta">
+                                Whitewater GAMED — Secretary
+                            </p>
+                            <ul>
+                               <li>Participate in meetings, game jams, and other
+                                activities that support communication,
+                                organization, collaboration, and connection
+                                with other game development students.</li> 
+                            </ul>
+                            <br>
+                            <p class="resume-meta">
+                                Men's Bowling Team - Joliet Juinior College
+                            </p>
+                            <ul>
+                                <li>Competed in tornaments: Understanding the importance of accountability, communication, focus, and supporting teammates toward a common goal. </li>
+                            </ul>
+                        </article>
+
+                        <!--<article class="resume-block" id="resume-other">
+                            <h3>Other</h3>
+                            <p>
+                                More portfolio information, awards,
+                                certifications, or additional experience can be
+                                added here as your professional background grows.
+                            </p> -->
+
+                            <div class="resume-actions">
+                                <!-- Replace the href with your uploaded PDF file -->
+                                <a class="btn btn-primary" href="New Resume.pdf" target="_blank" rel="noopener">
+                                    View Full Resume
+                                </a>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================
+             CONTACT
+        ========================== -->
+        <section class="section contact" id="contact">
+            <div class="container contact-inner">
+                <h2 class="section-title">Contact</h2>
+
+                <p class="contact-copy">
+                    Thanks for visiting my portfolio. You can find me and my
+                    projects through the links below.
+                </p>
+
+                <div class="contact-links">
+
+                    <!-- Replace these placeholder href values -->
+                    <a class="contact-link"
+                       href="mailto:jacob9scholes@gmail.com">
+                        Email
+                    </a>
+
+                    <a class="contact-link"
+                       href="#"
+                       target="_blank"
+                       rel="noopener">
+                        LinkedIn
+                    </a>
+
+                    <a class="contact-link"
+                       href="#"
+                       target="_blank"
+                       rel="noopener">
+                        GitHub
+                    </a>
+
+                    <a class="contact-link"
+                       href="#"
+                       target="_blank"
+                       rel="noopener">
+                        Itch.io
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
 
     <!-- =========================
-         CONTACT
+         FOOTER
     ========================== -->
-    <section class="section contact" id="contact">
-        <div class="container contact-inner">
-            <h2 class="section-title">Contact</h2>
-
-            <p class="contact-copy">
-                Thanks for visiting my portfolio. You can find me and my
-                projects through the links below.
-            </p>
-
-            <div class="contact-links">
-
-                <!-- Replace these placeholder href values -->
-                <a class="contact-link"
-                   href="mailto:jacob9scholes@gmail.com">
-                    Email
-                </a>
-
-                <a class="contact-link"
-                   href="#"
-                   target="_blank"
-                   rel="noopener">
-                    LinkedIn
-                </a>
-
-                <a class="contact-link"
-                   href="#"
-                   target="_blank"
-                   rel="noopener">
-                    GitHub
-                </a>
-
-                <a class="contact-link"
-                   href="#"
-                   target="_blank"
-                   rel="noopener">
-                    Itch.io
-                </a>
-
-            </div>
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year"></span> Jacob Scholes. All rights reserved.</p>
         </div>
-    </section>
+    </footer>
 
-</main>
+    <!-- Small amount of JavaScript for dynamic year -->
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
 
-<!-- =========================
-     FOOTER
-========================== -->
-<footer>
-    <div class="container">
-        <p>&copy; <span id="year"></span> Jacob Scholes. All rights reserved.</p>
-    </div>
-</footer>
-
-<!-- Small amount of JavaScript for dynamic year -->
-<script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+</body>
+</html>
