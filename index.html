@@ -413,6 +413,21 @@
             align-self: center;
         }
 
+        .category-image {
+            width: 100%;
+            height: 200px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #252832;
+        }
+
+        .category-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
         /* =========================
            RESUME
         ========================== */
@@ -834,16 +849,76 @@
              individual project pages later.
         ========================== -->
         <section class="section" id="completed-games">
-            <div class="container">
-                <h2 class="section-title">Completed Games</h2>
-                <p class="section-subtitle">
-                    Finished game projects featuring gameplay programming, game
-                    systems, design, and development.
+    <div class="container">
+        <h2 class="section-title">Completed Games</h2>
+
+        <p class="section-subtitle">
+            Finished game projects featuring gameplay programming, game
+            systems, design, and development.
+        </p>
+
+        <div class="category-grid">
+
+            <article class="category-box">
+
+                <div class="category-image">
+                    <img src="images/echoing-sanctuary.jpg"
+                         alt="Echoing Sanctuary gameplay screenshot">
+                </div>
+
+                <h3>Echoing Sanctuary</h3>
+
+                <p>
+                    Unity / C# 2D action-platformer featuring player
+                    movement, combat, enemy AI, health systems, and
+                    multiple environments.
                 </p>
 
-                <section class="section projects" id="projects">
-    <div class="container">
-        <h2 class="section-title">My Projects</h2>
+                <a class="btn btn-secondary" href="#">
+                    View Project
+                </a>
+
+            </article>
+
+            <article class="category-box">
+
+                <div class="category-image">
+                    <img src="images/game-2.jpg"
+                         alt="Second completed game screenshot">
+                </div>
+
+                <h3>Future Game Project</h3>
+
+                <p>
+                    Add a description of another completed game project here.
+                </p>
+
+                <a class="btn btn-secondary" href="#">
+                    View Project
+                </a>
+
+            </article>
+
+            <article class="category-box">
+
+                <div class="category-image">
+                    <img src="images/game-3.jpg"
+                         alt="Third completed game screenshot">
+                </div>
+
+                <h3>Future Game Project</h3>
+
+                <p>
+                    Add a description of another completed game project here.
+                </p>
+
+                <a class="btn btn-secondary" href="#">
+                    View Project
+                </a>
+
+            </article>
+
+        </div>
     </div>
 </section>
 
