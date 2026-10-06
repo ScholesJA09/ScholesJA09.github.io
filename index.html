@@ -125,6 +125,10 @@
             gap: 14px;
         }
 
+        .resume-heading {
+            text-align: center;
+        }
+
         /* =========================
            BUTTONS
         ========================== */
@@ -238,6 +242,12 @@
             align-items: start;
         }
 
+        .about-copy {
+            max-width: 850px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
         .about-copy p {
             margin-bottom: 18px;
             color: #c7cad2;
@@ -275,6 +285,8 @@
 
         .projects {
             background: #101114;
+            text-align: center;
+            padding: 70px 0;
         }
 
         .project-grid {
@@ -829,38 +841,11 @@
                     systems, design, and development.
                 </p>
 
-                <div class="category-grid">
-                    <article class="category-box">
-                        <h3>Echoing Sanctuary</h3>
-                        <p>
-                            Unity / C# 2D action-platformer featuring player
-                            movement, combat, enemy AI, health systems, and
-                            multiple environments.
-                        </p>
-                        <a class="btn btn-secondary" href="#">View Project</a>
-                    </article>
-
-                    <article class="category-box">
-                        <h3>Future Game Project</h3>
-                        <p>
-                            Placeholder for another completed game project,
-                            screenshots, development details, and a playable
-                            build.
-                        </p>
-                        <a class="btn btn-secondary" href="#">View Project</a>
-                    </article>
-
-                    <article class="category-box">
-                        <h3>Future Game Project</h3>
-                        <p>
-                            Placeholder for another finished game that you want
-                            to feature in your portfolio.
-                        </p>
-                        <a class="btn btn-secondary" href="#">View Project</a>
-                    </article>
-                </div>
-            </div>
-        </section>
+                <section class="section projects" id="projects">
+    <div class="container">
+        <h2 class="section-title">My Projects</h2>
+    </div>
+</section>
 
         <section class="section about" id="game-jams">
             <div class="container">
@@ -945,10 +930,13 @@
              RESUME
         ========================== -->
         <section class="section resume" id="resume">
-            <div class="container">
-                <h2 class="section-title">Resume</h2>
+    <div class="container">
 
-                <div class="resume-layout">
+        <div class="resume-heading">
+            <h2 class="section-title">Resume</h2>
+        </div>
+
+        <div class="resume-layout">
 
                     <aside class="resume-nav" aria-label="Resume sections">
                         <a href="#resume-about">About</a>
