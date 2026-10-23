@@ -514,6 +514,39 @@
             font-size: 0.92rem;
         }
 
+        /* Reusable Resume Entry Layout */
+
+        .resume-entry {
+            margin-bottom: 24px;
+        }
+
+        .resume-entry-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 24px;
+            margin-bottom: 12px;
+        }
+
+        .resume-entry-left {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .resume-entry-right {
+            text-align: right;
+            flex-shrink: 0;
+        }
+
+        .resume-entry-heading p {
+            margin-bottom: 4px;
+        }
+
+        .resume-entry ul {
+            padding-left: 20px;
+            color: #c2c6cf;
+        }
+        
         .resume-block p {
             color: #c2c6cf;
         }
@@ -617,6 +650,17 @@
             .resume-nav {
                 position: static;
                 height: auto;
+            }
+
+            .education-heading,
+            .resume-entry-heading {
+                flex-direction: column;
+                gap: 6px;
+            }
+
+            .education-right,
+            .resume-entry-right {
+                text-align: left;
             }
         }
 
@@ -987,24 +1031,57 @@
 
                         <article class="resume-block" id="resume-education">
                             <h3>EDUCATION</h3>
-                            
+                            <div class="resume-entry">
+                            <div class="resume-entry-heading">
+                            <div class="resume-entry-left">
                             <p class="resume-meta">
-                                University of Wisconsin–Whitewater <p style-"text-align: right;"> Whitewater, WI
-                                <i> Bachlor of Arts in Media Arts and Game Development <p style-"text-align: right;"> Anticipated Graducation: May 2027</i>
+                                University of Wisconsin–Whitewater
                             </p>
+                            <p>
+                                <i>Bachelor of Arts in Media Arts and Game Development</i>
+                            </p>
+                            </div>
+                            <div class="resume-entry-right">
+                                <p>Whitewater, WI</p>
+                                <p><i>Anticipated Graduation: May 2027</i></p>
+                            </div>
+                            </div>
                             <ul>
-                                <li><b>Emphasis:</b> Technology | <b>Minor:</b> Computer Science</li> 
-                                <li><b>Honors:</b> Named to the Dean's list for high academic standing (Fall 2025, Spring 2026)</li>
+                            <li>
+                                <b>Emphasis:</b> Technology |
+                                <b>Minor:</b> Computer Science
+                            </li>
+                            <li>
+                                <b>Honors:</b> Dean's List for high academic standing
+                                    (Fall 2025, Spring 2026)
+                            </li>
                             </ul>
-                            <br>
+                            </div>
+
+                            <div class="resume-entry">
+                            <div class="resume-entry-heading">
+                            <div class="resume-entry-left">
                             <p class="resume-meta">
-                                Joliet Junior College <p style-"text-align: right;"> Joliet, IL
-                                <i>Associate of Arts <p style-"text-align: right;"> Graduacted: May 2025</i>
+                                Joliet Junior College
                             </p>
+                            <p>
+                                <i>Associate of Arts</i>
+                            </p>
+                            </div>
+                            <div class="resume-entry-right">
+                                <p>Joliet, IL</p>
+                                <p><i>Graduated: May 2025</i></p>
+                            </div>
+                            </div>
                             <ul>
-                                <li><b>Emphasis:</b> Game Development</li>
-                                <li><b>Honors:</b> NCBCA Collegiate Scholar Athlete</li>
+                            <li>
+                                <b>Emphasis:</b> Game Development
+                            </li>
+                            <li>
+                                <b>Honors:</b> NCBCA Collegiate Scholar Athlete
+                            </li>
                             </ul>
+                            </div>
                         </article>
 
                         <article class="resume-block" id="resume-experience">
